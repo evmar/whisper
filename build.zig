@@ -15,6 +15,11 @@ pub fn build(b: *std.Build) void {
     exe.addIncludePath("src");
     exe.linkFramework("CoreAudio");
 
+    exe.linkFramework("Accelerate");
+    exe.linkSystemLibrary("c++");
+    exe.addLibraryPath("src");
+    exe.linkSystemLibraryName("whisper");
+
     b.installArtifact(exe);
 
     const run_cmd = b.addRunArtifact(exe);
