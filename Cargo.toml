@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "miniaudio-sys",
+    "whisper",
+    "whisper-sys",
+]
